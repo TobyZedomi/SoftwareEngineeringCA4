@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe11027d-f701-435c-8e4e-264dcd207c2c" name="Changes" comment="TCP Network Layer">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fe11027d-f701-435c-8e4e-264dcd207c2c" name="Changes" comment="order book linked list and match result" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +105,7 @@
       <workItem from="1777123775307" duration="3698000" />
       <workItem from="1777128421987" duration="53000" />
       <workItem from="1777128486357" duration="203000" />
-      <workItem from="1777128776392" duration="10990000" />
+      <workItem from="1777128776392" duration="11294000" />
     </task>
     <task id="LOCAL-00001" summary="TCP Network Layer">
       <created>1777148064265</created>
@@ -120,7 +114,35 @@
       <option name="project" value="LOCAL" />
       <updated>1777148064265</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="User and user manager">
+      <created>1777148429926</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1777148429926</updated>
+    </task>
+    <task id="LOCAL-00003" summary="OrderBook Manager">
+      <created>1777148527187</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1777148527187</updated>
+    </task>
+    <task id="LOCAL-00004" summary="OrderBook Manager and order book observer with order class">
+      <created>1777148662426</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777148662426</updated>
+    </task>
+    <task id="LOCAL-00005" summary="order book linked list and match result">
+      <created>1777148687017</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1777148687017</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +150,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="TCP Network Layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="TCP Network Layer" />
+    <MESSAGE value="User and user manager" />
+    <MESSAGE value="OrderBook Manager" />
+    <MESSAGE value="OrderBook Manager and order book observer with order class" />
+    <MESSAGE value="order book linked list and match result" />
+    <option name="LAST_COMMIT_MESSAGE" value="order book linked list and match result" />
   </component>
 </project>
