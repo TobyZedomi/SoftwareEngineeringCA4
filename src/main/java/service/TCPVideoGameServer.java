@@ -120,7 +120,7 @@ public class TCPVideoGameServer implements Runnable, OrderBookObserver {
             bestOffer = String.valueOf(orderBook.getBestOfferPrice());
         }
 
-        String marketUpdate = UserUtilities.MARKET_UPDATE + "%%" + orderBook.getGameTitle() + "%%" + "Best Bid: " + bestBid + " | Best Offer: " + bestOffer;
+        String marketUpdate = UserUtilities.MARKET_UPDATE + "%%" + orderBook.getGameTitle() + "%%" + "Best Bid: " + bestBid + " and Best Offer: " + bestOffer;
 
         sendToClient(marketUpdate);
 
@@ -270,9 +270,6 @@ public class TCPVideoGameServer implements Runnable, OrderBookObserver {
                     client.sendToClient(message);
                     break;
                 }
-            }
-            for (int i = 0; i < clients.size(); i++) {
-                System.out.println("Client " + i + ": " + clients.get(i).username);
             }
         }
     }

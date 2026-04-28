@@ -175,7 +175,7 @@ public class TCPVideoGameClient {
                 responseReceived = true;
                 break;
             case AuthUtils.MARKET_UPDATE:
-                System.out.println("Market update: " + parts[1]);
+                System.out.println("Market update: " + parts[1] + " at " + parts[2]);
                 break;
             case AuthUtils.MATCH:
                 System.out.println(content);
