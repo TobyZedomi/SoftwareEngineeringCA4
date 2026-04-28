@@ -271,7 +271,6 @@ public class TCPVideoGameServer implements Runnable, OrderBookObserver {
                     break;
                 }
             }
-            System.out.println("Looking for client with username: " + username + " to send match notification");
             for (int i = 0; i < clients.size(); i++) {
                 System.out.println("Client " + i + ": " + clients.get(i).username);
             }

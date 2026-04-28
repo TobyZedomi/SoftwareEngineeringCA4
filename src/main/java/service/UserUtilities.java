@@ -17,7 +17,7 @@ public class UserUtilities {
 
     public static final String PASSWORD_EMPTY = "PASSWORD_EMPTY";
     public static final String PASSWORDS_DONT_MATCH = "PASSWORDS_DONT_MATCH";
-    public static final String INVALID_PASSWORD_FORMAT = "INVALID_PASSWORD_FORMAT";
+
     public static final String REGISTER_SUCCESSFUL = "REGISTER_SUCCESSFUL";
     public static final String USER_ALREADY_EXIST = "USER_ALREADY_EXIST";
     public static final String NOT_LOGGED_IN = "NOT_LOGGED_IN";
