@@ -1,10 +1,10 @@
 package model;
 
 import commands.CancelOrderCommand;
-import commands.SubmitOrderCommand;
+import commands.SendOrderForGameCommand;
+import utils.DynamicArrayList;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 public class OrderManager implements IOrderManager {
     private final OrderBookManager orderBookManager = OrderBookManager.getInstance();
@@ -19,10 +19,9 @@ public class OrderManager implements IOrderManager {
         OrderBook book = orderBookManager.getOrderBook(title);
         Order order = new Order(username, buyerOrSeller, title, price, quantity, dateOfOrder);
 
-        SubmitOrderCommand command = new SubmitOrderCommand(book, order);
-        command.execute();
+       MatchResult matchResult = book.submitOrder(order);
 
-        return command.getResult();
+        return matchResult;
     }
 
 
@@ -32,9 +31,7 @@ public class OrderManager implements IOrderManager {
         boolean cancelled = false;
 
         if (book != null) {
-            CancelOrderCommand command = new CancelOrderCommand(book, username, buyerOrSeller);
-            command.execute();
-            cancelled = command.getResult();
+            cancelled = book.cancelOrder(username, buyerOrSeller);
         }
 
 
@@ -77,9 +74,9 @@ public class OrderManager implements IOrderManager {
     }
 
 
-    public ArrayList<Order> getAllOrders() {
+    public DynamicArrayList<Order> getAllOrders() {
 
-        ArrayList<Order> allOrders = new ArrayList<>();
+        DynamicArrayList<Order> allOrders = new DynamicArrayList<>();
         String[] titles = orderBookManager.getAllTitles();
 
         for (int i = 0; i < titles.length; i++) {

@@ -1,7 +1,8 @@
 package model;
 
+import utils.DynamicArrayList;
+
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 public interface IOrderManager {
 
@@ -14,5 +15,5 @@ public interface IOrderManager {
     boolean checkIfBuyerOrSellerIsValid(String buyerOrSeller);
 
     boolean checkIfTitleIsValid(String title);
-    public ArrayList<Order> getAllOrders();
+    public DynamicArrayList<Order> getAllOrders();
 }

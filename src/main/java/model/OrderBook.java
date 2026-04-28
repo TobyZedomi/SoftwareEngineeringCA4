@@ -1,13 +1,10 @@
 package model;
 
+import utils.DynamicArrayList;
 import utils.OrderBookLinkedList;
 
-import java.util.ArrayList;
-
 public class OrderBook  {
-
-    private final ArrayList<OrderBookObserver> observers = new ArrayList<>();
-
+    private final DynamicArrayList<OrderBookObserver> observers = new DynamicArrayList<>();
     private final String gameTitle;
     private final OrderBookLinkedList bids;
 
@@ -57,10 +54,9 @@ public class OrderBook  {
 
     private void notifyObservers() {
         synchronized (observers){
-            observers.stream().forEach((o) ->
-            {
-                o.update(this);
-            });
+            for (int i = 0; i < observers.size(); i++){
+                observers.get(i).update(this);
+            }
         }
     }
 
@@ -128,7 +124,7 @@ public class OrderBook  {
                 offers.removeFirst();
             }
 
-            return new MatchResult(bestBid.getBuyerOrSeller(), bestOffer.getTitle(), tradePrice, tradeQuantity, bestOffer.getUsername());
+            return new MatchResult(bestBid.getBuyerOrSeller(), bestOffer.getTitle(), tradePrice, tradeQuantity, bestOffer.getUsername(), bestBid.getUsername());
         }
 
         return null;
@@ -153,7 +149,7 @@ public class OrderBook  {
 
     public void printBook() {
         System.out.println("Order Book: " + gameTitle);
-        System.out.printf("Bids", "Offers");
+        System.out.printf("%-20s %-20s%n", "Bids", "Offers");
 
 
         Order[] sortedBids = bids.toArray();
@@ -179,7 +175,7 @@ public class OrderBook  {
                 offerStr = sortedOffers[i].getPrice() + " (qty:" + sortedOffers[i].getQuantity() + ")";
             }
 
-            System.out.printf(bidStr, offerStr);
+            System.out.printf("%-20s %-20s%n", bidStr, offerStr);
         }
         System.out.println();
     }

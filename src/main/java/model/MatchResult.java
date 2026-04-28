@@ -19,4 +19,6 @@ public class MatchResult {
     private int quantity;
 
     private String counterParty;
+
+    private String bidOwner;
 }

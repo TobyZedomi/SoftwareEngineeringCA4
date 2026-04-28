@@ -1,13 +1,11 @@
 package model;
 
 import org.mindrot.jbcrypt.BCrypt;
-
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import utils.LinearProbeHashMap;
 
 public class UserManager {
 
-    private Map<String, User> users = new ConcurrentHashMap<>();
+    private LinearProbeHashMap<String, User> users = new LinearProbeHashMap<>();
 
 
     public UserManager(){

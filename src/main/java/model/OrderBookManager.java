@@ -1,14 +1,12 @@
 package model;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import utils.LinearProbeHashMap;
 
 public class OrderBookManager {
 
     private volatile static OrderBookManager instance;
 
-
-    private Map<String, OrderBook> books = new ConcurrentHashMap<>();
+    private LinearProbeHashMap<String, OrderBook> books = new LinearProbeHashMap<>();
 
 
     private OrderBookManager(){
@@ -42,17 +40,23 @@ public class OrderBookManager {
 
 
     public void registerObserverWithAllBooks(OrderBookObserver observer){
-        for(OrderBook book : books.values()){
-            book.register(observer);
+        Object[] titles = books.keySet();
+
+        for (int i = 0; i < titles.length; i++) {
+            if (titles[i] !=null) {
+                books.get((String) titles[i]).register(observer);
+            }
         }
     }
 
     public String[] getAllTitles(){
-        String[] titles = new String[books.size()];
-        int i = 0;
-        for(String title : books.keySet()){
-            titles[i] = title;
-            i++;
+        Object[] keys = books.keySet();
+        String[] titles = new String[keys.length];
+
+        for (int i = 0; i < keys.length; i++){
+            if(keys[i] != null){
+                titles[i] = (String) keys[i];
+            }
         }
         return titles;
     }
