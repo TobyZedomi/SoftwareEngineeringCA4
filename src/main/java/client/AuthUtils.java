@@ -20,4 +20,6 @@ public class AuthUtils {
 
     public static final String MARKET_UPDATE = "MARKET_UPDATE";
 
+    public static final String ORDERS_RETRIEVED_SUCCESSFULLY = "ORDERS_RETRIEVED_SUCCESSFULLY";
+
 }

@@ -1,6 +1,7 @@
 package client;
 
 import network.TCPNetworkLayer;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -52,12 +53,14 @@ public class TCPVideoGameClient {
                         case 1:
                             responseReceived = false;
                             networkLayer.send(generateLoginMessage(keyboard));
-                            while (responseReceived == false){}
+                            while (responseReceived == false) {
+                            }
                             break;
                         case 2:
                             responseReceived = false;
                             networkLayer.send(generateRegisterMessage(keyboard));
-                            while (responseReceived == false){}
+                            while (responseReceived == false) {
+                            }
                             break;
                         default:
                             System.out.println("Please use an option from the menu");
@@ -76,31 +79,36 @@ public class TCPVideoGameClient {
                         case 1:
                             responseReceived = false;
                             networkLayer.send(generateBidMessage(keyboard));
-                            while (responseReceived == false){}
+                            while (responseReceived == false) {
+                            }
                             break;
                         case 2:
                             responseReceived = false;
 
                             networkLayer.send(generateOfferMessage(keyboard));
-                            while (responseReceived == false){}
+                            while (responseReceived == false) {
+                            }
                             break;
                         case 3:
                             responseReceived = false;
 
                             networkLayer.send(generateCancelMessage(keyboard));
-                            while (responseReceived == false){}
+                            while (responseReceived == false) {
+                            }
                             break;
                         case 4:
                             responseReceived = false;
 
                             networkLayer.send(AuthUtils.VIEW);
-                            while (responseReceived == false){}
+                            while (responseReceived == false) {
+                            }
                             break;
                         case 5:
                             responseReceived = false;
 
                             networkLayer.send(AuthUtils.END);
-                            while (responseReceived == false){}
+                            while (responseReceived == false) {
+                            }
                             loggedIn = false;
                             break;
                         default:
@@ -181,10 +189,18 @@ public class TCPVideoGameClient {
                 System.out.println(content);
                 responseReceived = true;
                 break;
+            case AuthUtils.ORDERS_RETRIEVED_SUCCESSFULLY:
+                String[] orders = parts[1].split("##");
+
+                for (int i = 0; i < orders.length; i++) {
+                    System.out.println(" " + orders[i]);
+                }
+                responseReceived = true;
+                break;
             default:
                 if (!content.isEmpty()) {
                     System.out.println(content);
-                }else{
+                } else {
                     System.out.println(message);
                 }
                 responseReceived = true;
